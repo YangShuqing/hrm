@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link  href="Css/layout.css" rel="stylesheet" type="text/css" />
+<link href="Css/cb.css" rel="stylesheet" type="text/css"   />
+<link  href="Css/n.css" rel="stylesheet" type="text/css" />
+ 
+<script type="text/javascript" language="javascript" src="Scripts/common.js"></script>
+ <script src="Scripts/date.js"  ></script>
+ <style type="text/css">
+<!--
+.STYLE1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+-->
+ </style>
+</head>
+
+<body>
+<table width="99%" height="25" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:4px;">
+      <tr>
+        <td width="17" background="Images/bj4.gif"><img src="Picture/r.gif" width="16" height="16" /></td>
+        <td width="466" background="Images/bj4.gif">马云(超级管理员):你好！欢迎光临，您上次登录时间是：2015-09-20 23:15:15		
+		</td>
+        <td width="162" align="center" background="Images/bj4.gif">
+		
+				</td>           
+      </tr>
+    </table>
+<form id="form2" name="form2" action="">
+  <table width="99%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+      <td height="25" align="center">计划编号</td>
+      <td><label>
+        <input name="bianhao" type="text" id="bianhao" />
+      </label></td>
+      <td align="center">学院</td>
+      <td><label>
+        <input name="xueyuan" type="text" id="xueyuan" />
+      </label></td>
+      <td align="center">项目负责人</td>
+      <td><label>
+        <input name="fuzeren" type="text" id="fuzeren" size="15" />
+      </label></td>
+      <td align="center">经费来源</td>
+      <td align="center"><input name="fuzeren2" type="text" id="fuzeren2" size="15" /></td>
+      <td align="center">年份</td>
+      <td><select name="applyyear" id="applyyear">
+      <option value="" >请选择...</option>
+      <option value='2009' >2009</option><option value='2010' >2010</option><option value='2011' >2011</option><option value='2012' >2012</option><option value='2013' >2013</option><option value='2008' >2008</option><option value='2014' >2014</option><option value='2015' >2015</option><option value='2016' >2016</option>    </select></td>
+      <td><label>
+        <input type="submit" name="Submit3" value="提交" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+<form id="form1" name="form1" method="post" action="?action=save"><table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#AEDEF4">
+  <tr>
+    <td height="25" colspan="18" align="center" bgcolor="#D6F2FD"><input name="itemid" type="hidden" id="itemid" value="" />
+      购买清单</td>
+  </tr>
+  <tr>
+    <td height="25" align="center" bgcolor="#FFF9DF">选项</td>
+    <td height="25" align="center" bgcolor="#FFF9DF">计划编号</td>
+    <td align="center" bgcolor="#FFF9DF">设备名称</td>
+    <td align="center" bgcolor="#FFF9DF">型号</td>
+    <td align="center" bgcolor="#FFF9DF">  数量 </td>
+    <td align="center" bgcolor="#FFF9DF">&nbsp;设备来源</td>
+    <td align="center" bgcolor="#FFF9DF" style="display:none">经费来源</td>
+    <td align="center" bgcolor="#FFF9DF" style="display:none">采购方式</td>
+    <td align="center" bgcolor="#FFF9DF">计划经费</td>
+    <td align="center" bgcolor="#FFF9DF">支付总额</td>
+    <td align="center" bgcolor="#FFF9DF" style="display:none">节资率</td>
+    <td align="center" bgcolor="#FFF9DF" style="display:none">供货商</td>
+    <td align="center" bgcolor="#FFF9DF" style="display:none">签合同</td>
+    <td align="center" bgcolor="#FFF9DF" style="display:none">免税</td>
+    <td align="center" bgcolor="#FFF9DF">到货时间</td>
+    <td align="center" bgcolor="#FFF9DF">验收</td>
+    <td align="center" bgcolor="#FFF9DF">转档案</td>
+  </tr> 
+  <tr>
+    <td height="25" colspan="18" bgcolor="#FFFFFF"> <input type="button" name="Submit" value="全选/反选"  onclick="CheckAll(this.form);return false;" />
+      <label>
+      <input type="submit" name="button" id="button" value="提交设置">
+      </label>
+	   <input type="hidden" name="Submit2" value="返回列表" onclick="location.href=''"/>	    
+	   总计：设备数<span class="STYLE1"></span>台  计划经费：<span class="STYLE1"></span>元 支付总额:<span class="STYLE1"></span>元 </td>
+  </tr>
+  <tr style="display:none">
+    <td height="12" colspan="18" bgcolor="#FFFFFF">&nbsp;<span class='pagelink'><</span> <span class='pagelink'><<</span>  <span class='pagelink'>>></span> <span class='pagelink'>></span> 转到第&nbsp;<input id='JumpSelect' type='text' size='2' value='1'onBlur="javascript:if(isNaN(parseInt(this.value)) || parseInt(this.value) > 0){alert('您输入的数字只能在 1 ～ 0之间，请重新输入'); return false;}location.href='http://zcysysb.sdu.edu.cn:4500/sdxmmanage/teacher/buylist.php?NowPage='+parseInt(this.value)" title='鼠标外部单击，文章转向'> 页</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td height="25" colspan="18" bgcolor="#FFFFFF">审核通过后，请打印购置申请表，送交到设备供应科。</td>
+  </tr>
+</table> 
+</form>
+
+<script>
+	function gl(tag,yn){
+ 
+		if (checkBoxSelected("ids[]")){
+			if(tag=="del"){
+				if(confirm('确信要删除')){
+					//document.forms['form2'].action = 'save.php?action=pl&tag='+tag+'&yn='+yn+'&tt='+Math.random();
+					//document.forms['form2'].submit();
+				}
+			}else if(tag=="ruku"){
+				document.forms['form1'].action = 'set_0.php?action=ruku&tag='+tag+'&yn='+yn+'&tt='+Math.random();
+				document.forms['form1'].submit();
+			}else{
+				//alert(yn);
+				//document.forms['form2'].action = 'shebei_buy.php?itemid=&tag='+tag+'&yn='+yn+'&tt='+Math.random();
+				//document.forms['form2'].submit();
+			
+			}
+		}else{
+			XN.DO.alert('请选择..！');
+			return false;
+		}
+	}
+	</script>
+
+</body>
+</html>
