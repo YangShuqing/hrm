@@ -10,6 +10,6 @@
 员工管理、部门、角色管理、档案管理、合同管理等多个模块
 
 ##部分演示截图（原型文件夹内为静态html文件）
-![](http://i2.buimg.com/5878318207542f17.png)
-![](http://i2.buimg.com/71d0dae40cb31825.png)
+![login](http://i2.buimg.com/5878318207542f17.png)
+![index](http://i2.buimg.com/71d0dae40cb31825.png)
 
