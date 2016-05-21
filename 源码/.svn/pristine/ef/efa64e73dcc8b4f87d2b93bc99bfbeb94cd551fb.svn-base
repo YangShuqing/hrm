@@ -1,0 +1,166 @@
+package com.buaa.hr.manager.impl;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.buaa.hr.entity.Resume;
+import com.buaa.hr.manager.IResumeManager;
+import com.buaa.hr.untils.ConnectionFactory;
+import com.buaa.hr.untils.Database;
+
+public class ResumeManager implements IResumeManager {
+	public List printAllResume(){//打印所有履历
+		
+		Connection conn=ConnectionFactory.getConnection();
+		Statement stmt=null;
+		ResultSet rs=null;
+		
+		List allResume=new ArrayList();
+		
+		
+		
+		try {
+			stmt=conn.createStatement();
+			
+			rs=stmt.executeQuery("select * from t_resume");
+			
+			while(rs.next()){
+				Resume resume=new Resume();
+				resume.setResumeid(rs.getInt("resumeid"));
+				resume.setDeptId(rs.getInt("deptId"));
+				resume.setEmpId(rs.getInt("empId"));
+				resume.setEmpName(rs.getString("empName"));
+				resume.setEndDate(rs.getString("endDate"));
+				resume.setStartDate(rs.getString("startDate"));
+				resume.setJob(rs.getString("job"));
+				resume.setJobContent(rs.getString("jobContent"));
+				resume.setSchool(rs.getString("school"));
+				resume.setTrainscore(rs.getInt("trainscore"));
+				
+				allResume.add(resume);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			Database.release(conn, stmt, rs);
+		}
+		return allResume;
+	}
+	public Resume printResumeByResumeId(int resumeid){//打印某个员工的履历
+		
+		
+		Connection conn=ConnectionFactory.getConnection();
+		Statement stmt=null;
+		ResultSet rs=null;
+		Resume resume=new Resume();
+		try {
+			stmt=conn.createStatement();
+			
+			rs=stmt.executeQuery("select * from t_resume where empId="+resumeid);
+			
+			while(rs.next()){
+				
+				resume.setDeptId(rs.getInt("deptId"));
+				resume.setEmpId(rs.getInt("empId"));
+				resume.setEmpName(rs.getString("empName"));
+				resume.setEndDate(rs.getString("endDate"));
+				resume.setStartDate(rs.getString("startDate"));
+				resume.setJob(rs.getString("job"));
+				resume.setJobContent(rs.getString("jobContent"));
+				resume.setSchool(rs.getString("school"));
+				resume.setTrainscore(rs.getInt("trainscore"));
+				
+				
+				
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			Database.release(conn, stmt, rs);
+		}
+		return resume;
+		
+	}
+	public void addResume(Resume resume){//增加员工履历
+		
+		Connection conn=ConnectionFactory.getConnection();
+		Statement stmt=null;
+		ResultSet rs=null;
+		
+		try {
+			stmt=conn.createStatement();
+			
+			stmt.executeUpdate("insert into t_resume values('"+resume.getResumeid()+"','"+resume.getEmpId()+"','"+resume.getEmpName()+"','"+resume.getDeptId()+"','"+resume.getJob()+"','"+resume.getSchool()+"','"+resume.getJobContent()+"','"+resume.getTrainscore()+"','"+resume.getStartDate()+"','"+resume.getEndDate()+"')");
+			
+			/*while(rs.next()){
+				
+			}*/
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			Database.release(conn, stmt, rs);
+		}
+		
+	}
+	public void deleteResume(int resumeid){//删除员工履历
+		
+		Connection conn=ConnectionFactory.getConnection();
+		Statement stmt=null;
+		ResultSet rs=null;
+		
+		try {
+			stmt=conn.createStatement();
+			
+		stmt.executeUpdate("delete from t_resume where resumeid="+resumeid);
+			
+			/*while(rs.next()){
+				
+			}*/
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			Database.release(conn, stmt, rs);
+		}
+		
+	}
+	public void updateResume(Resume resume){//更新员工履历
+		
+		Connection conn=ConnectionFactory.getConnection();
+		Statement stmt=null;
+		ResultSet rs=null;
+		
+		try {
+			stmt=conn.createStatement();
+			
+			stmt.executeUpdate("update t_resume set empnName=resume.getEmpName(),school=resume.getSchool(),jobContent=resume.getJobContent(),job=resume.getJob(),startDate=resume.getStartDate(),endDate=resume.getEndDate(),deotId=resume.getDeptId(),empId=resume.getEmpId(),trainscore=resume.getTrainscore()");
+			
+			
+			/*while(rs.next()){	
+				
+			}*/
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			Database.release(conn, stmt, rs);
+		}
+		
+	}
+
+
+}

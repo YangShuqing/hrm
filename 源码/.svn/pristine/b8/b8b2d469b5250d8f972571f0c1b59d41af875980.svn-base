@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>人事调动信息查询</title>
+<link  href="Css/layout.css" rel="stylesheet" type="text/css" />
+<link href="Css/cb.css" rel="stylesheet" type="text/css"   />
+<link  href="Css/n.css" rel="stylesheet" type="text/css" />
+<style>
+.biankuangs{ border:solid #A6D2FF 1px; border-top:0px;   }
+#xueke,#item_text2,#item_text1,#itemtypes2,#item_text3{ /**/display:none;}
+</style>
+<script type="text/javascript">
+	function search1(){
+		var userId = document.getElementById("userId").value;
+		if(){
+			
+		}
+		location.href = "/Hrm/empTransferServlet?actioncode=queryEmpById&userId=" + userId;
+	}
+	function search2(){
+		var str = document.getElementById("str").value;
+		location.href = "/Hrm/empTransferServlet?actioncode=queryEmpByStr&str=" + str;
+	}
+</script>
+</head>
+<body>
+<table width="99%" height="25" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:4px;">
+      <tr>
+        <td width="17" background="Images/bj4.gif"><img src="Picture/r.gif" width="16" height="16" /></td>
+        <td width="466" background="Images/bj4.gif">马云(超级管理员):你好！欢迎光临，您上次登录时间是：2015-09-20 23:15:15		
+		</td>
+        <td width="162" align="center" background="Images/bj4.gif">
+		
+				</td>           
+      </tr>
+    </table>
+	<table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="1%" align="left" background="Images/b2.jpg"><img src="Picture/b1.jpg" width="10" height="26" /></td><!--左框-->
+            <td width="68%" background="Images/b2.jpg"><table width="124" border="0" align="left" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="20" align="left"><img src="Picture/tz.gif" width="10" height="16" /></td>
+                  <td width="104" align="left" class="biao">员工搜索</td>
+                </tr>
+            </table></td><!--嵌套表格放灯泡图片和文字-->
+            <td width="31%" align="right" background="Images/b2.jpg"><img src="Picture/b3.jpg" width="9" height="26" /></td><!--右框-->
+          </tr>
+</table>
+	<table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#AEDEF4">
+    <tr>
+      <td align="center" bgcolor="#E2F7FE">
+       <form id="form1" name="form1" method="get" action="">
+      <!--嵌套的表格-->
+    	  <table width="40%" border="0" cellspacing="1" cellpadding="3">
+            <tr>
+              请输入员工ID：
+		<input type="text" id="userId"/>
+		<input type="button" value="查询" onClick="search1()"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		请输入员工姓名：
+		<input type="text" id="str"/>
+		<input type="button" value="搜索" onClick="search2()"/>
+            </tr>
+          </table>
+	    </form>
+       </td>
+    </tr>
+</table>
+  <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="1%" align="left" background="Images/b2.jpg"><img src="Picture/b1.jpg" width="10" height="26" /></td>
+            <td width="68%" background="Images/b2.jpg"><table width="174" border="0" align="left" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="20" align="left"><img src="Picture/tz.gif" width="10" height="16" /></td>
+                  <td width="154" align="left" class="biao">人事调动</td>
+                </tr>
+            </table></td>
+            <td width="31%" align="right" background="Images/b2.jpg"><img src="Picture/b3.jpg" width="9" height="26" /></td>
+          </tr>
+</table>
+	
+	 <table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#AEDEF4" style="border:1px solid #AEDEF4">
+    <tr>
+      <td width="12%" height="25" align="center" bgcolor="#EFFBFE">员工ID</td>
+      <td width="18%" align="center" bgcolor="#EFFBFE">员工姓名</td>
+      <td colspan="2" align="center" bgcolor="#EFFBFE">性别</td>
+      <td width="19%" align="center" bgcolor="#EFFBFE">职称</td>
+      <td width="19%" align="center" bgcolor="#EFFBFE">部门</td>
+      <td width="21%" align="center" bgcolor="#EFFBFE">调动</td>
+    </tr>
+    </table>
+    
+    
+</body>
+
+</html>

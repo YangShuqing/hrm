@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登陆</title>
+<link href="Css/cb.css" rel="stylesheet" type="text/css" />
+<link href="Css/n.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.STYLE1 {
+	color: #ffffff;
+	font-size: 14px;
+}
+.STYLE4 {
+	color: #8da8c3;
+	font-size: 14px;
+}
+.STYLE6 {
+	font-size: 14px;
+	color: #5593ce;
+}
+-->
+.Submit{
+    width: 250px;
+    height: 37px;
+    border: 0;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    line-height: 36px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFF;
+    background: #1f5b9a;
+    border-radius: 3px;
+    cursor: pointer;
+    zoom: 1;
+}
+</style>
+<link  href="Css/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="Scripts/base.js"></script>  
+<script>
+function check(){
+	f=document.form1;
+	if(f.username.value==""){
+		alert("请填写用户名");
+		return false;
+	}
+	if(f.password.value==""){
+		alert("请填写密码");
+		return false;
+	}
+	if(f.tyeps.value==""){
+		alert("请选择用户类型");
+		return false;
+	}
+	if(f.yz.value==""){
+		alert("请填写验证码");
+		return false;
+	}
+}
+function myReload() {  
+	    document.getElementById("CreateCheckCode").src = document  
+	            .getElementById("CreateCheckCode").src  
+	            + "?nocache=" + new Date().getTime();  
+}
+</script>
+</head>
+
+<body>
+<table width="100%" height="594" border="0" align="center" cellpadding="0" cellspacing="0"  style="margin:0px; padding:0px">
+  <tr>
+    <td height="594"  align="center" valign="top" background="Images/bj.gif">
+	<table width="465" height="414" border="0" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td  height="152" colspan="3" valign="bottom"><img src="Picture/toplogin.jpg" width="460" height="152" /></td>
+      </tr>
+      <tr>
+        <td width="15" height="262" background="Images/bj1.gif">&nbsp;</td>
+        <td width="420" valign="middle" background="Images/bj2.gif">
+		<form id="form1" name="form1" method="post" action="loginCheck.jsp" onsubmit="return check();">
+		<table width="100%" height="170" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="31%" align="right"><span class="STYLE1">用户名：</span></td>
+              <td colspan="3" align="left"><label>
+                <input name="userName" type="text" id="username" />
+              </label></td>
+            </tr>
+            <tr>
+              <td align="right"><span class="STYLE1">密&nbsp;&nbsp;码：</span></td>
+              <td colspan="3" align="left"><label>
+                <input name="password" type="password" id="password" />
+              </label></td>
+            </tr>
+            <tr>
+              <td align="right"><span class="STYLE1">身&nbsp;&nbsp;份：</span></td>
+              <td colspan="3" align="left">
+                <label>
+                <select name="tyeps">
+                  <option value="">请选择...</option>
+                  <option value="1">管理员</option>
+                  <option value="2">HR</option>
+                  <option value="3">员工</option>
+                </select>
+                </label>                       </td>
+            </tr>
+			<tr>
+					<td colspan="2" align="">  
+	            <span class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码:</span>
+	            <input name="checkCode" type="text" id="checkCode" title="验证码区分大小写"  
+	                size="8" ,maxlength="4" />  
+	            <img src="PictureCheckCode" id="CreateCheckCode" align="middle">  
+	            <a href="" onclick="myReload()"> 换一个</a>  
+	            	</td>
+				</tr>
+				
+			</tr>
+				<td colspan="4" align="center">
+					<button class="Submit" type="submit" data-ing="确认中..." tabindex="5" id="J_SubmitStatic">登　录</button> 
+					  
+					
+				</td>
+				
+			<tr>
+            <tr>
+              <!-- <td>&nbsp;</td>
+              <td width="15%" valign="top"><p class="STYLE4">&nbsp;</p>                </td>
+              <td width="20%" align="right" valign="middle">
+              			  <a href="/reg.php"   ><span class="STYLE4">注册新用户</span></a><br /><br />
+              			<span class="STYLE4">找回密码</span></td>
+              <td width="34%" height="55" align="left"> 
+              			  <input name="image" type="image"  style="width:60px; height:55px;" src="images/login2.gif" />			  </td> -->
+            </tr>
+        </table>
+		 </form>		</td>
+        <td width="13" background="Images/bj3.gif">&nbsp;</td>
+      </tr>
+    </table>
+	<table width="465" height="76" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="76">&nbsp;</td>
+      </tr>
+    </table>
+	<br />
+	<table width="100%" height="64" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="64" align="center" valign="middle"><span class="STYLE6">版权所有：北京航空航天大学大数据云计算一班第四项目组 <br />
+              <br />
+          江苏省南通市科教城 滨海园区88号 邮编:550100</span></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
